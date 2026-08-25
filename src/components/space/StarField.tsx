@@ -1,6 +1,10 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export function StarField({ count = 70 }: { count?: number }) {
+  // Stars are randomized, so only render them after hydration.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const stars = useMemo(
     () =>
       Array.from({ length: count }, (_, i) => ({
