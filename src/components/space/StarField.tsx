@@ -19,7 +19,7 @@ export function StarField({ count = 70 }: { count?: number }) {
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-      {stars.map((s) => (
+      {(mounted ? stars : []).map((s) => (
         <span
           key={s.id}
           className="twinkle absolute rounded-full bg-star"
