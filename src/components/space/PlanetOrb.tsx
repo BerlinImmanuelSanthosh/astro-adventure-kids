@@ -21,7 +21,7 @@ export function PlanetOrb({ planet, visited, onClick, scale = 1, spin = true }: 
         background: `radial-gradient(circle at 32% 28%, ${planet.colorA}, ${planet.colorB})`,
         boxShadow: `inset -10px -14px 26px oklch(0.1 0.05 280 / 0.55), 0 0 34px ${planet.colorA}55`,
       }}
-      animate={spin ? { y: [0, -8, 0] } : undefined}
+      animate={spin ? { y: [0, -8, 0] } : { y: 0 }}
       transition={{ duration: 4 + planet.size / 60, repeat: Infinity, ease: "easeInOut" }}
     >
       {planet.id === "saturn" && (
